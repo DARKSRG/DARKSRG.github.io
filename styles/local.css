@@ -8,7 +8,7 @@
   body {
     /* background-color: #b7d8fd;
      */
-    background-image: url(https://vsthemes.org/uploads/posts/2017-12/1582033157_8k-minimalist_vsthemes_ru-17.webp);
+    background-image: url(../img/back.jpg);
     background-size:cover;
     color: #003366;
     line-height: 1.6;
@@ -60,6 +60,7 @@
     align-items: center;
     justify-content: center;
   }
+
   nav a {
     margin-right: 25px;
     color: white;
@@ -67,23 +68,25 @@
     font-weight: 700;
     position: relative;
   }
+
   /* Стили для основного меню */
   nav ul {
     list-style: none;
     position: relative;
-    display: flex; /* Flex только для основного меню */
+    display: flex;
     align-items: center;
-    
   }
+
   nav ul li {
     position: relative;
     display: inline-block;
-    
   }
+
   nav ul li a {
     padding: 10px;
     display: block;
   }
+
   /* Стили для выпадающего подменю */
   nav ul li ul {
     position: absolute;
@@ -97,29 +100,39 @@
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
     border-radius: 5px;
     z-index: 1;
-    display: block; /* Убираем flex для подменю */
-    
+    display: block;
   }
+
+  /* Стили для вложенного подменю (Сведения о техникуме) */
+  nav ul li ul li ul {
+    margin-left: 5px;
+    top: 0;
+    left: 100%; /* Открывается справа */
+    transform: translateX(10px); /* Смещение для анимации */
+  }
+
   nav ul li ul li {
-    display: block; /* Элементы подменю в столбик */
+    display: block;
     width: 100%;
-    
   }
+
   nav ul li ul li a {
     margin: 0;
     padding: 10px 15px;
     color: #004080;
     font-weight: 700;
-    display: block; /* Убедимся, что ссылки занимают всю ширину */
+    display: block;
   }
+
   nav ul li ul li a:hover {
     background-color: white;
   }
+
   /* Показ подменю при наведении */
   nav ul li:hover > ul {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateY(0) translateX(0); /* Убираем смещение после анимации */
   }
 
   .nav-bot {
